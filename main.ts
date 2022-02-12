@@ -60,7 +60,7 @@ function ObjTrack () {
 huskylens.initI2c()
 let color2 = 0
 let dial = Math.trunc(color2 % 5)
-basic.showIcon(IconNames.SmallHeart)
+basic.showIcon(IconNames.Asleep)
 basic.pause(2000)
 basic.clearScreen()
 basic.forever(function () {
