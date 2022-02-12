@@ -59,23 +59,24 @@ function ObjTrack () {
 }
 huskylens.initI2c()
 let color2 = 0
+let dial = Math.trunc(color2 % 5)
 basic.showIcon(IconNames.SmallHeart)
 basic.pause(2000)
 basic.clearScreen()
 basic.forever(function () {
-    if (color2 == 0) {
+    if (dial == 0) {
         huskylens.initMode(protocolAlgorithm.ALGORITHM_FACE_RECOGNITION)
         HumanFace()
-    } else if (color2 == 1) {
+    } else if (dial == 1) {
         huskylens.initMode(protocolAlgorithm.ALGORITHM_OBJECT_RECOGNITION)
         ObjRec()
-    } else if (color2 == 2) {
+    } else if (dial == 2) {
         huskylens.initMode(protocolAlgorithm.ALGORITHM_LINE_TRACKING)
         LineFollow()
-    } else if (color2 == 3) {
+    } else if (dial == 3) {
         huskylens.initMode(protocolAlgorithm.ALGORITHM_COLOR_RECOGNITION)
         RecColor()
-    } else if (color2 == 4) {
+    } else if (dial == 4) {
         huskylens.initMode(protocolAlgorithm.ALGORITHM_TAG_RECOGNITION)
         TagRec()
     } else {
